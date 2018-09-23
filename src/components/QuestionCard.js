@@ -4,8 +4,13 @@ import Card from "./Card";
 
 const QuestionCard = styled(Card)`
   font-size: 64px;
+  flex-direction: column;
+  justify-content: space-around;
   color: ${props => props.theme.fontColorA};
   cursor: pointer;
+  img {
+    max-height: 300px;
+  }
 
   &:hover {
     transform: scale(1.05);

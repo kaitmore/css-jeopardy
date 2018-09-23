@@ -10,7 +10,7 @@ function Questions({
 }) {
   return (
     <React.Fragment>
-      {questions.map(({ q, value }, i) => {
+      {questions.map(({ q, img, value }, i) => {
         const isSelected = selectedCardID === i;
         return (
           <QuestionCard
@@ -20,7 +20,14 @@ function Questions({
             onClick={() => onSetSelectedCardID(i)}
             visited={visitedCards.some(card => card === i)}
           >
-            {isSelected ? q : `$${value}`}
+            {isSelected ? (
+              <React.Fragment>
+                {q}
+                {img && <img src={img} />}
+              </React.Fragment>
+            ) : (
+              `$${value}`
+            )}
           </QuestionCard>
         );
       })}
