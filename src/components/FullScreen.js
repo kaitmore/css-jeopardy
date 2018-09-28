@@ -12,7 +12,7 @@ const rotate180 = keyframes`
 `;
 
 const FullScreen = styled(QuestionCard)`
-  padding: 100px 0;
+  padding: 0 100px;
   animation: ${rotate180} 0.2s linear;
   display: flex;
   justify-content: space-around;

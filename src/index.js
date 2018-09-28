@@ -8,7 +8,7 @@ import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
   <ThemeProvider theme={classicTheme}>
-    <App test={"HEY"} />
+    <App />
   </ThemeProvider>,
   document.getElementById("root")
 );

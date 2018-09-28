@@ -24,7 +24,8 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.visitedCards);
+    const { selectedCardID, visitedCards } = this.state;
+    const currentCard = questions[selectedCardID];
     return (
       <AppWrapper>
         <GlobalStyle />
@@ -32,22 +33,18 @@ class App extends Component {
           <Categories categories={categories} />
           <Cards
             questions={questions}
-            visitedCards={this.state.visitedCards}
-            selectedCardID={this.state.selectedCardID}
+            visitedCards={visitedCards}
+            selectedCardID={selectedCardID}
             onSetSelectedCardID={this.onSetSelectedCardID}
           />
-          {this.state.selectedCardID && (
+          {selectedCardID && (
             <FullScreen
-              onClick={() =>
-                this.onSetSelectedCardID(this.state.selectedCardID)
-              }
-              isDailyDouble={questions[this.state.selectedCardID].dailyDouble}
+              onClick={() => this.onSetSelectedCardID(selectedCardID)}
+              isDailyDouble={currentCard.dailyDouble}
             >
-              {questions[this.state.selectedCardID] && [
-                questions[this.state.selectedCardID].q,
-                questions[this.state.selectedCardID].img && (
-                  <img src={questions[this.state.selectedCardID].img} />
-                )
+              {currentCard && [
+                currentCard.q,
+                currentCard.img && <img src={currentCard.img} />
               ]}
             </FullScreen>
           )}

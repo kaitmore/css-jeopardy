@@ -1,18 +1,12 @@
 import React from "react";
 import QuestionCard from "./components/QuestionCard";
 
-function Questions({
-  questions,
-  selectedCardID,
-  onSetSelectedCardID,
-  visitedCards = []
-}) {
+function Questions({ questions, onSetSelectedCardID, visitedCards = [] }) {
   return (
     <React.Fragment>
-      {questions.map(({ q, img, value, dailyDouble }, i) => {
+      {questions.map(({ q, value }, i) => {
         return (
           <QuestionCard
-            as="button"
             key={`${q}|${value}`}
             onClick={() => onSetSelectedCardID(String(i))}
             visited={visitedCards.some(card => card === String(i))}

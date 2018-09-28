@@ -82,7 +82,7 @@ export const questions = [
   {
     category: "history",
     value: 600,
-    dailyDouble: false,
+    dailyDouble: true,
     q:
       "In the early 2000's the CSS box model was not standardized across browsers, so a solution was created called doctype switching. A developer could specify a doctype to trigger this 'eccentric' mode, where the browser attempts to emulate the behavior of older browsers.",
     a: "What is quirks mode"
