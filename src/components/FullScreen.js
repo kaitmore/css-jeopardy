@@ -25,6 +25,7 @@ const FullScreen = styled(QuestionCard)`
   bottom: 0;
   left: 0;
   background: ${props => props.theme.backgroundColorC};
+
   &:hover {
     transform: unset;
     background-color: ${props => props.theme.backgroundColorB};
@@ -33,12 +34,12 @@ const FullScreen = styled(QuestionCard)`
   ${props =>
     props.isDailyDouble &&
     css`
-    background-color: red;
+      background-color: red;
       :before {
         content: "DAILY DOUBLE";
         position: absolute;
-        top: 24px
         font-size: 24px;
+        top: 24px;
       }
       &:hover {
         transform: unset;
