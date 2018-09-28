@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "./components/Card";
 import QuestionCard from "./components/QuestionCard";
 
 function Questions({
@@ -10,24 +9,15 @@ function Questions({
 }) {
   return (
     <React.Fragment>
-      {questions.map(({ q, img, value }, i) => {
-        const isSelected = selectedCardID === i;
+      {questions.map(({ q, img, value, dailyDouble }, i) => {
         return (
           <QuestionCard
             as="button"
-            isOpen={isSelected}
             key={`${q}|${value}`}
-            onClick={() => onSetSelectedCardID(i)}
-            visited={visitedCards.some(card => card === i)}
+            onClick={() => onSetSelectedCardID(String(i))}
+            visited={visitedCards.some(card => card === String(i))}
           >
-            {isSelected ? (
-              <React.Fragment>
-                {q}
-                {img && <img src={img} />}
-              </React.Fragment>
-            ) : (
-              `$${value}`
-            )}
+            {`$${value}`}
           </QuestionCard>
         );
       })}

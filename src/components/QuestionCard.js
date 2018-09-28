@@ -8,6 +8,7 @@ const QuestionCard = styled(Card)`
   justify-content: space-around;
   color: ${props => props.theme.fontColorA};
   cursor: pointer;
+
   img {
     max-height: 300px;
   }
@@ -23,36 +24,6 @@ const QuestionCard = styled(Card)`
   }
 
   visibility: ${props => props.visited && "hidden"};
-
-  ${props =>
-    props.isOpen &&
-    css`
-      animation: ${rotate180} 0.3s linear;
-      color: ${props => props.theme.fontColorB};
-      visibility: visible;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      padding: 100px;
-      background: ${props => props.theme.backgroundColorC};
-      &:hover {
-        transform: unset;
-        background-color: ${props => props.theme.backgroundColorB};
-      }
-    `};
-`;
-
-const rotate180 = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(180deg);
-  }
 `;
 
 export default QuestionCard;

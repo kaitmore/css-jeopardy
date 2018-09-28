@@ -4,7 +4,7 @@ export const questions = [
     value: 200,
     dailyDouble: false,
     q:
-      "This international standards organization which currently maintains the CSS spec released their recommendation for CSS1 in 1996",
+      "This international standards organization currently maintains the CSS spec and released their recommendation for CSS1 in 1996",
     a: "What is the World Wide Web Consortium or W3C"
   },
   {
@@ -152,7 +152,7 @@ export const questions = [
   {
     category: "under the hood",
     value: 800,
-    dailyDouble: false,
+    dailyDouble: true,
     q:
       "These style sheets are created by the browser and provide a default style",
     a: "What are user-agent stylesheets"

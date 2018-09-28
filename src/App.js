@@ -7,6 +7,7 @@ import Cards from "./Cards";
 import Categories from "./Categories";
 
 import { questions, categories } from "./data";
+import FullScreen from "./components/FullScreen";
 
 class App extends Component {
   state = { selectedCardID: null, visitedCards: [] };
@@ -23,6 +24,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.visitedCards);
     return (
       <AppWrapper>
         <GlobalStyle />
@@ -34,6 +36,21 @@ class App extends Component {
             selectedCardID={this.state.selectedCardID}
             onSetSelectedCardID={this.onSetSelectedCardID}
           />
+          {this.state.selectedCardID && (
+            <FullScreen
+              onClick={() =>
+                this.onSetSelectedCardID(this.state.selectedCardID)
+              }
+              isDailyDouble={questions[this.state.selectedCardID].dailyDouble}
+            >
+              {questions[this.state.selectedCardID] && [
+                questions[this.state.selectedCardID].q,
+                questions[this.state.selectedCardID].img && (
+                  <img src={questions[this.state.selectedCardID].img} />
+                )
+              ]}
+            </FullScreen>
+          )}
         </Grid>
       </AppWrapper>
     );
